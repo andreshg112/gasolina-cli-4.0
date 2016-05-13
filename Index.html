@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="gasolinaApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Taller - Tecnología Web II</title>
+    <link href="assets/libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/libs/bootstrap/sticky-footer.css" rel="stylesheet" />
+    <link href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.min.css" rel="stylesheet" />
+    <link href="assets/css/styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/ico" href="favicon.ico" />
+</head>
+
+<body ng-controller="IndexController as index">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://sites.google.com/site/tecweb2upc/" target="_blank">Tecnología Web II</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <ul class="nav navbar-nav">
+                    <li ng-click="index.activeRegistrar();" ng-class="index.verRegistrar ? 'active' : ''"><a href="#/registrar/">Registrar</a></li>
+                    <li ng-click="index.activeConsultar();" ng-class="index.verConsultar ? 'active' : ''"><a href="#/consultar/">Consultar</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li ng-click="index.activeAcerca();" ng-class="index.verAcerca ? 'active' : ''"><a href="#/acerca/">Acerca de</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container" ng-view>
+    </div>
+    </br>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Tema <a href="http://bootswatch.com/simplex/" target="_blank">Bootstrap Simplex</a>. Tomado de <a href="http://bootswatch.com/"
+                        target="_blank">Bootswatch</a>.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/libs/jquery/jquery-1.9.1.min.js"></script>
+    <script src="assets/libs/jquery-ui/jquery-ui.min.js"></script>
+    <!-- <script src="assets/js/scripts.js"></script> -->
+    <script src="assets/libs/bootstrap/bootstrap.min.js"></script>
+    <script src="assets/libs/angular/angular.min.js"></script>
+    <script src="assets/libs/angular/angular-route.min.js"></script>
+    <script src="assets/libs/angular/ngStorage.min.js"></script>
+    <!-- <script src="app/app.module.js"></script>
+    <script src="app/app.routes.js"></script>
+    <script src="app/declaraciones/decs-$http.service.js"></script> -->
+    <!--<script src="app/declaraciones/decs-lstorage.service.js"></script>-->
+    <!--<script src="app/declaraciones/decs-memory.service.js"></script>-->
+    <!-- <script src="app/compartido/meses.service.js"></script>
+    <script src="app/compartido/departamentos.service.js"></script>
+    <script src="app/compartido/anios.service.js"></script>
+    <script src="app/index/index.controller.js"></script>
+    <script src="app/declaraciones/registrar.controller.js"></script>
+    <script src="app/declaraciones/consultar.controller.js"></script> -->
+    <script src="app.min.js"></script>
+</body>
+
+</html>

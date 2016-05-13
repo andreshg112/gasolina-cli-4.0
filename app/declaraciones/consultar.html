@@ -1,0 +1,30 @@
+<h2>Consultar declaraciones</h2>
+<div class="form-group">
+    Filtro:
+    <input class="form-control" type="text" ng-model="filtro" />
+</div>
+<div class="table-responsive">
+    <table class="table table-bordered table-hover table-striped">
+        <tr>
+            <th>#</th>
+            <th>Apellidos y Nombre o Razón Social del Declarante</th>
+            <th>Tipo de documento</th>
+            <th>Número</th>
+            <th>&nbsp;</th>
+        </tr>
+        <tr ng-repeat="declaracion in consultarVm.declaraciones | filter:filtro track by $index">
+            <td>{{declaracion.id}}</td>
+            <td>{{declaracion.nombres}}</td>
+            <td>{{declaracion.tipo_documento}}</td>
+            <td>{{declaracion.numero_documento}}</td>
+            <td><a ng-click="consultarVm.mostrarDeclaracion(declaracion)" href="javascript:;">Ver JSON</a></td>
+        </tr>
+    </table>
+    <div class="alert alert-dismissible alert-success" ng-show="consultarVm.isMostrado">
+        <button type="button" ng-click="consultarVm.isMostrado = false" class="close">&times;</button>
+        <p>{{consultarVm.declaracionSeleccionada | json}}</p>
+        </br>
+        <p>Copia y pega este código en <a href="http://www.jsonparser.org/" target="_blank">JSON Parser</a> para visualizar mejor el objeto.</p>
+        <p>También puedes visualizar el objeto en tu consola del navegador. Presiona F12.</p>
+    </div>
+</div>

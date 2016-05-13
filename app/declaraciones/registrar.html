@@ -1,0 +1,230 @@
+<form class="form-horizontal" role="form">
+    <div id="fila-1" class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <center>
+                        <h2>Declaración de la Sobretasa Departamental de la Gasolina Motor</h2>Formato MHCP-DAF-017-2009-GAS
+                    </center>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Sección A: Información Entidad Territorial</div>
+                <div class="panel-body">
+                    <div class="row form-group">
+                        <label class="col-sm-2 control-label">Departamento:</label>
+                        <div class="col-sm-4">
+                            <select ng-model="regVm.declaracion.entidad_departamento" ng-options="depart.nombre as depart.nombre for depart in regVm.departamentos"
+                            class="form-control"></select>
+                        </div>
+                        <label class="col-sm-3 control-label">Código DANE:</label>
+                        <div class="col-sm-3">
+                            <input type="text" ng-model="regVm.declaracion.entidad_codigo_dane" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <label class="col-sm-2 control-label">NIT:</label>
+                        <div class="col-sm-4">
+                            <input type="text" ng-model="regVm.declaracion.entidad_nit" class="form-control" />
+                        </div>
+                        <label class="col-sm-3 control-label">D.V.:</label>
+                        <div class="col-sm-3">
+                            <input type="text" ng-model="regVm.declaracion.entidad_dv" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="fila-2" class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Sección B: Calidad de declarante</div>
+                <div class="panel-body">
+                    <select ng-model="regVm.declaracion.calidad_declarante" class="form-control">
+                        <option>Distribuidor mayorista</option>
+                        <option>Otra calidad</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">Sección C: Información de la declaración que se corrige</div>
+                <div class="panel-body">
+                    <div class="row form-group">
+                        <label class="col-sm-2 control-label">Corrección:</label>
+                        <div class="col-sm-1">
+                            <input type="checkbox" ng-model="regVm.declaracion.correccion_valor" class="form-control" />
+                        </div>
+                        <label class="col-sm-2">Número de declaración:</label>
+                        <div class="col-sm-3">
+                            <input type="number" min="0" ng-model="regVm.declaracion.correccion_id" class="form-control" />
+                        </div>
+                        <label class="col-sm-1 control-label">Fecha:</label>
+                        <div class="col-sm-3">
+                            <input id="datepicker" type="text" ng-model="regVm.declaracion.correccion_fecha" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="fila-3" class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Sección D: Período gravable</div>
+                <div class="panel-body">
+                    <label class="control-label col-sm-2">Año:</label>
+                    <div class="col-sm-4">
+                        <select ng-model="regVm.declaracion.anio" ng-options="anio for anio in regVm.anios" class="form-control">
+                        </select>
+                    </div>
+                    <label class="control-label col-sm-2">Mes:</label>
+                    <div class="col-sm-4">
+                        <select ng-model="regVm.declaracion.mes" ng-options="mes for mes in regVm.meses" class="form-control">
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="fila-4" class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">Sección E: Información general</div>
+                <div class="panel-body">
+                    <div id="fila-4-1" class="row">
+                        <div class="col-sm-4">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">E1: Apellidos y Nombre o Razón Social del declarante</div>
+                                <div class="panel-body">
+                                    <label class="col-sm-12">Apellidos y Nombre o Razón Social:</label>
+                                    <div class="col-sm-12">
+                                        <input class="form-control" type="text" ng-model="regVm.declaracion.nombres">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">E2: Identificación del declarante</div>
+                                <div class="panel-body">
+                                    <label class="col-sm-2">Tipo de documento:</label>
+                                    <div class="col-sm-2">
+                                        <select ng-model="regVm.declaracion.tipo_documento" class="form-control">
+                                            <option>CC</option>
+                                            <option>NIT</option>
+                                        </select>
+                                    </div>
+                                    <label class="control-label col-sm-2">Número:</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" min="0" class="form-control" ng-model="regVm.declaracion.numero_documento">
+                                    </div>
+                                    <label class="control-label col-sm-1">D.V.:</label>
+                                    <div class="col-sm-2">
+                                        <input type="text" min="0" class="form-control" ng-model="regVm.declaracion.dv">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="fila-4-2" class="row">
+                        <div class="col-sm-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <strong class="col-sm-1">E3. Dirección:</strong>
+                                    <div class="col-sm-2">
+                                        <input class="form-control" type="text" ng-model="regVm.declaracion.direccion">
+                                    </div>
+                                    <label class="control-label col-sm-1">Departamento:</label>
+                                    <div class="col-sm-2">
+                                        <select ng-model="regVm.declaracion.departamento" ng-options="depart.nombre as depart.nombre for depart in regVm.departamentos"
+                                        ng-change="regVm.cargarMunicipios()" class="form-control">
+                                            <option value="">Seleccione un departamento</option>
+                                        </select>
+                                    </div>
+                                    <label class="control-label col-sm-1">Municipio:</label>
+                                    <div class="col-sm-2">
+                                        <select ng-model="regVm.declaracion.municipio" ng-options="munic for munic in regVm.municipios" class="form-control">
+                                            <option value="" ng-if="false"></option>
+                                        </select>
+                                    </div>
+                                    <label class="control-label col-sm-1">Teléfono:</label>
+                                    <div class="col-sm-2">
+                                        <input type="number" min="0" class="form-control" ng-model="regVm.declaracion.telefono" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="fila-5" class="row">
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Sección F: Liquidación
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th>Clase de producto</th>
+                                <th>Galones gravado</th>
+                                <th>Precio de referencia por galón</th>
+                                <th>% de alcohol carbur.</th>
+                                <th>Base gravable</th>
+                                <th>Sobretasa</th>
+                            </tr>
+                            <tr ng-repeat="gasolina in regVm.declaracion.gasolinas_attributes">
+                                <td>{{$index + 1}}. {{gasolina.clase}}</td>
+                                <td>
+                                    <input type="number" min="0" class="form-control" ng-model="gasolina.galones_gravado" ng-change="regVm.calcular(gasolina)"
+                                    />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" class="form-control" ng-model="gasolina.precio_referencia" ng-change="regVm.calcular(gasolina)"
+                                    />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" class="form-control" ng-model="gasolina.porcentaje_alcohol" ng-change="regVm.calcular(gasolina)"
+                                    />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" class="form-control" ng-model="gasolina.base_gravable" disabled="" />
+                                </td>
+                                <td>
+                                    <input type="number" min="0" class="form-control" ng-model="gasolina.sobretasa" disabled="" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <center>
+        <input type="button" ng-click="regVm.guardar()" class="btn btn-success" value="Guardar" />
+    </center>
+</form>
+
+<!-- Modal de respuesta al registro -->
+<div id="modalRegistro" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header" style="text-align: center;">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">{{regVm.respuestaRegistro}}</h4>
+            </div>
+            <div class="modal-footer" style="text-align: center;">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>

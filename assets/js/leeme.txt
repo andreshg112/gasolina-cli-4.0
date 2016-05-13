@@ -1,0 +1,1 @@
+Aquí deben ir los archivos javascript de la aplicación que no están relacionados con AngularJS y no son librerías/bibliotecas/frameworks (JQuery, ReactJS, bootstrap.js, etc.)
