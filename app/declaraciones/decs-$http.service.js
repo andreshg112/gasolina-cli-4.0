@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -12,7 +12,7 @@
 
         ////////////////
 
-        var uri = "https://nameless-falls-81232.herokuapp.com/declaraciones";
+        var uri = "http://localhost:51672/api/declaraciones";
 
         function all() {
             console.log("getAll");
@@ -22,7 +22,7 @@
 
         function save(registro) {
             console.log("post");
-            var req = $http.post(uri, { declaracion: registro });
+            var req = $http.post(uri, registro);
             return req;
         }
     }
